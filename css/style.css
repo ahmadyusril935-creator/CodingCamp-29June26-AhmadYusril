@@ -1,0 +1,1338 @@
+/* ======================================================
+   RESET CSS
+====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    background:linear-gradient(135deg,#4F46E5,#7C3AED,#06B6D4);
+    background-size:300% 300%;
+    animation:gradientMove 12s ease infinite;
+    color:var(--text-color);
+}
+
+/* ======================================================
+   CSS VARIABLES
+====================================================== */
+
+:root{
+
+    --primary:#4F46E5;
+    --secondary:#7C3AED;
+    --accent:#06B6D4;
+
+    --success:#22C55E;
+    --danger:#EF4444;
+    --warning:#F59E0B;
+
+    --background:#F5F7FB;
+    --card:#FFFFFF;
+
+    --text-color:#1F2937;
+    --text-light:#6B7280;
+
+    --border:#E5E7EB;
+
+    --shadow:
+        0 8px 25px rgba(0,0,0,.12);
+
+    --radius:18px;
+
+    --transition:.3s ease;
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+
+body.dark{
+
+    --background:#0F172A;
+
+    --card:#1E293B;
+
+    --text-color:#F8FAFC;
+
+    --text-light:#CBD5E1;
+
+    --border:#334155;
+
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+
+body{
+
+    background:var(--background);
+
+    color:var(--text-color);
+
+    transition:all .35s ease;
+
+}
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.container{
+
+    width:min(1200px,95%);
+
+    margin:auto;
+
+    padding:40px 0;
+
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-bottom:35px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:25px;
+
+    padding:28px 35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ======================================================
+   GREETING
+====================================================== */
+
+.greeting{
+
+    flex:1;
+
+}
+
+.greeting h1{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:var(--text-color);
+
+    margin-bottom:10px;
+
+}
+
+.greeting span{
+
+    color:var(--primary);
+
+}
+
+.greeting button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:.9rem;
+
+    transition:var(--transition);
+
+}
+
+.greeting button:hover{
+
+    transform:translateY(-2px);
+
+    background:#4338CA;
+
+}
+
+/* ======================================================
+   DATE & CLOCK
+====================================================== */
+
+.datetime{
+
+    text-align:center;
+
+}
+
+#clock{
+
+    font-size:2.7rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+#date{
+
+    margin-top:8px;
+
+    color:var(--text-light);
+
+    font-size:1rem;
+
+}
+
+/* ======================================================
+   THEME BUTTON
+====================================================== */
+
+#themeToggle{
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:1.2rem;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:var(--transition);
+
+    box-shadow:0 10px 25px rgba(79,70,229,.35);
+
+}
+
+#themeToggle:hover{
+
+    transform:rotate(180deg) scale(1.08);
+
+    background:#4338CA;
+
+}
+
+/* ======================================================
+   MAIN LAYOUT
+====================================================== */
+
+main{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.card{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card h2{
+
+    margin-bottom:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:1.35rem;
+
+}
+
+/* ======================================================
+   ANIMATION
+====================================================== */
+
+@keyframes gradientMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:900px){
+
+.header{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.greeting{
+
+    order:2;
+
+}
+
+.datetime{
+
+    order:1;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.container{
+
+    width:95%;
+
+}
+
+#clock{
+
+    font-size:2rem;
+
+}
+
+.greeting h1{
+
+    font-size:1.5rem;
+
+}
+
+.header{
+
+    padding:20px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+}
+/* ======================================================
+   TODO INPUT
+====================================================== */
+
+.todo-input{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+.todo-input input{
+
+    flex:1;
+
+}
+
+/* ======================================================
+   GLOBAL INPUT
+====================================================== */
+
+input{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border:2px solid var(--border);
+
+    border-radius:14px;
+
+    outline:none;
+
+    background:rgba(255,255,255,.8);
+
+    color:var(--text-color);
+
+    font-size:15px;
+
+    transition:var(--transition);
+
+}
+
+body.dark input{
+
+    background:#334155;
+
+}
+
+input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(79,70,229,.15);
+
+}
+
+/* ======================================================
+   GLOBAL BUTTON
+====================================================== */
+
+button{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+.todo-input button{
+
+    width:55px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:var(--transition);
+
+}
+
+.todo-input button:hover{
+
+    transform:scale(1.05);
+
+    background:#4338CA;
+
+}
+
+/* ======================================================
+   TODO LIST
+====================================================== */
+
+#taskList{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+/* ======================================================
+   TASK ITEM
+====================================================== */
+
+.task{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.55);
+
+    transition:var(--transition);
+
+}
+
+body.dark .task{
+
+    background:#334155;
+
+}
+
+.task:hover{
+
+    transform:translateX(6px);
+
+}
+
+/* ======================================================
+   TASK LEFT
+====================================================== */
+
+.task-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex:1;
+
+}
+
+.task-left input[type="checkbox"]{
+
+    width:22px;
+
+    height:22px;
+
+    accent-color:var(--success);
+
+    cursor:pointer;
+
+}
+
+/* ======================================================
+   TASK TEXT
+====================================================== */
+
+.task-text{
+
+    font-size:16px;
+
+    font-weight:500;
+
+    word-break:break-word;
+
+}
+
+.task.completed .task-text{
+
+    text-decoration:line-through;
+
+    opacity:.6;
+
+}
+
+/* ======================================================
+   TASK ACTION
+====================================================== */
+
+.task-action{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.task-action button{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.edit-btn{
+
+    background:#3B82F6;
+
+}
+
+.edit-btn:hover{
+
+    background:#2563EB;
+
+    transform:scale(1.08);
+
+}
+
+.delete-btn{
+
+    background:var(--danger);
+
+}
+
+.delete-btn:hover{
+
+    background:#DC2626;
+
+    transform:scale(1.08);
+
+}
+
+/* ======================================================
+   QUICK LINK INPUT
+====================================================== */
+
+.link-input{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.link-input button{
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.link-input button:hover{
+
+    background:#4338CA;
+
+}
+
+/* ======================================================
+   QUICK LINKS
+====================================================== */
+
+.links{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+
+    gap:15px;
+
+}
+
+/* ======================================================
+   LINK CARD
+====================================================== */
+
+.link-card{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:85px;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.6);
+
+    text-decoration:none;
+
+    color:var(--text-color);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    overflow:hidden;
+
+}
+
+body.dark .link-card{
+
+    background:#334155;
+
+}
+
+.link-card:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ======================================================
+   LINK ICON
+====================================================== */
+
+.link-card i{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+/* ======================================================
+   LINK CONTENT
+====================================================== */
+
+.link-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+/* ======================================================
+   DELETE LINK
+====================================================== */
+
+.delete-link{
+
+    position:absolute;
+
+    top:10px;
+
+    right:10px;
+
+    width:28px;
+
+    height:28px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--danger);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    transition:var(--transition);
+
+}
+
+.link-card:hover .delete-link{
+
+    opacity:1;
+
+}
+
+/* ======================================================
+   EMPTY STATE
+====================================================== */
+
+.empty{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+.empty i{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+    opacity:.5;
+
+}
+/* ======================================================
+   FOCUS TIMER
+====================================================== */
+
+.timer-card{
+
+    text-align:center;
+
+}
+
+#timer{
+
+    font-size:4rem;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    margin:35px 0;
+
+    color:var(--primary);
+
+    text-shadow:0 4px 20px rgba(79,70,229,.25);
+
+}
+
+.timer-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.timer-buttons button{
+
+    min-width:120px;
+
+    padding:14px 22px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+#startTimer{
+
+    background:var(--success);
+
+}
+
+#stopTimer{
+
+    background:var(--warning);
+
+}
+
+#resetTimer{
+
+    background:var(--danger);
+
+}
+
+.timer-buttons button:hover{
+
+    transform:translateY(-4px);
+
+    filter:brightness(1.08);
+
+}
+
+/* ======================================================
+   MODAL
+====================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(5px);
+
+    z-index:1000;
+
+}
+
+.modal.active{
+
+    display:flex;
+
+    animation:fadeIn .3s ease;
+
+}
+
+.modal-content{
+
+    width:min(420px,90%);
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    animation:scaleIn .3s ease;
+
+}
+
+.modal-content h2{
+
+    margin-bottom:10px;
+
+}
+
+.modal-content p{
+
+    color:var(--text-light);
+
+    margin-bottom:20px;
+
+}
+
+.modal-content input{
+
+    margin-bottom:18px;
+
+}
+
+.modal-content button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.modal-content button:hover{
+
+    background:#4338CA;
+
+}
+
+/* ======================================================
+   TOAST NOTIFICATION
+====================================================== */
+
+.toast{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    min-width:260px;
+
+    padding:16px 22px;
+
+    border-radius:14px;
+
+    background:#111827;
+
+    color:#fff;
+
+    box-shadow:var(--shadow);
+
+    transform:translateY(120px);
+
+    opacity:0;
+
+    transition:.35s ease;
+
+    z-index:1200;
+
+}
+
+.toast.show{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+body.dark .toast{
+
+    background:#0F172A;
+
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#4338CA;
+
+}
+
+/* ======================================================
+   GLASS EFFECT
+====================================================== */
+
+.card,
+.header{
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+body.dark .card,
+body.dark .header{
+
+    background:rgba(30,41,59,.75);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ======================================================
+   ICON ANIMATION
+====================================================== */
+
+button i{
+
+    transition:.3s;
+
+}
+
+button:hover i{
+
+    transform:scale(1.15);
+
+}
+
+/* ======================================================
+   HOVER EFFECT
+====================================================== */
+
+.card{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.18),
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+.card:hover::before{
+
+    left:100%;
+
+}
+
+/* ======================================================
+   PAGE ANIMATION
+====================================================== */
+
+.container{
+
+    animation:pageLoad .8s ease;
+
+}
+
+@keyframes pageLoad{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes scaleIn{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ======================================================
+   MOBILE RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+    main{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .timer-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .timer-buttons button{
+
+        width:100%;
+
+    }
+
+    .links{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    #timer{
+
+        font-size:3rem;
+
+    }
+
+    .links{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .toast{
+
+        right:15px;
+
+        left:15px;
+
+        min-width:auto;
+
+    }
+
+    .modal-content{
+
+        padding:25px;
+
+    }
+
+}
