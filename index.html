@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Life Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div class="greeting">
+
+                <h1 id="greetingText">
+                    Good Morning,
+                    <span id="username">Guest</span> 👋
+                </h1>
+
+                <button id="changeName">
+                    Change Name
+                </button>
+
+            </div>
+
+            <div class="datetime">
+
+                <h2 id="clock">
+                    00:00:00
+                </h2>
+
+                <p id="date">
+                    Monday, 1 January 2026
+                </p>
+
+            </div>
+
+            <button id="themeToggle">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+        </header>
+
+        <!-- ================= MAIN ================= -->
+
+        <main>
+
+            <!-- ================= TO DO ================= -->
+
+            <section class="card todo-card">
+
+                <h2>
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                    To-Do List
+
+                </h2>
+
+                <div class="todo-input">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Add new task...">
+
+                    <button id="addTask">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                </div>
+
+                <ul id="taskList">
+
+                    <!-- JavaScript -->
+
+                </ul>
+
+            </section>
+
+            <!-- ================= TIMER ================= -->
+
+            <section class="card timer-card">
+
+                <h2>
+
+                    🍅 Focus Timer
+
+                </h2>
+
+                <div id="timer">
+
+                    25:00
+
+                </div>
+
+                <div class="timer-buttons">
+
+                    <button id="startTimer">
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Start
+
+                    </button>
+
+                    <button id="stopTimer">
+
+                        <i class="fa-solid fa-pause"></i>
+
+                        Stop
+
+                    </button>
+
+                    <button id="resetTimer">
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        Reset
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ================= QUICK LINKS ================= -->
+
+            <section class="card links-card">
+
+                <h2>
+
+                    <i class="fa-solid fa-link"></i>
+
+                    Quick Links
+
+                </h2>
+
+                <div class="link-input">
+
+                    <input
+                        type="text"
+                        id="siteName"
+                        placeholder="Website Name">
+
+                    <input
+                        type="url"
+                        id="siteURL"
+                        placeholder="https://example.com">
+
+                    <button id="addLink">
+
+                        Add Link
+
+                    </button>
+
+                </div>
+
+                <div
+                    class="links"
+                    id="quickLinks">
+
+                    <!-- JavaScript -->
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ================= MODAL ================= -->
+
+    <div class="modal" id="nameModal">
+
+        <div class="modal-content">
+
+            <h2>
+
+                Welcome 👋
+
+            </h2>
+
+            <p>
+
+                Enter your name
+
+            </p>
+
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Your name">
+
+            <button id="saveName">
+
+                Save
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="toast"
+        id="toast">
+
+        Notification
+
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
